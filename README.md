@@ -5,10 +5,10 @@ Utility to track which notebook cells were executed successfully and which not.
 
 ### Usage
 
-- Enable extension using `%reload_ext nb_watchdog`
+- Enable extension using `%reload_ext watchdog`
 - Watch a cell by adding the magic command `%%watch` at the first line of the cell.
 - Unwatch using `%watch`
-- Remove extension using `%unload_ext nb_watchdog`
+- Remove extension using `%unload_ext watchdog`
 
 
 ### Example
