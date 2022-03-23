@@ -2,7 +2,7 @@
 Utility to track which notebook cells were executed successfully and which not.
 Upon error fix, only cells that didn't run successfully (in-order) will be run again (others will be skipped).
 
-*Important Note*: the utility current assumes that the cells are independent of each other. 
+*Important Note*: the utility currently assumes that the cells are independent of each other. 
 
 ### Usage
 
