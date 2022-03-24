@@ -36,11 +36,11 @@ class NotebookWatchDog():
 
 def load_ipython_extension(shell):
     wd = NotebookWatchDog(get_ipython())
-    '''Registers the skip magic when the extension loads.'''
+    '''Registers the watchdog magic when the extension loads.'''
     shell.register_magic_function(wd.watch, 'line_cell')
     shell.register_magic_function(wd.unwatch, 'line_cell')
 
 def unload_ipython_extension(shell):
-    '''Unregisters the skip magic when the extension unloads.'''
+    '''Unregisters the watchdog magic when the extension unloads.'''
     del shell.magics_manager.magics['cell']['watch']
     del shell.magics_manager.magics['cell']['unwatch']
