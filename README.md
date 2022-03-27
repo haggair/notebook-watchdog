@@ -9,6 +9,7 @@ Upon error fix, only cells that didn't run successfully (in-order) will be run a
 - Enable extension using `%reload_ext watchdog`
 - Watch a cell by adding the magic command `%%watch` at the first line of the cell.
 - Unwatch using `%unwatch`
+- Skip a single cell (without watching) using `%%skip`
 - Remove extension using `%unload_ext watchdog`
 
 
