@@ -33,14 +33,20 @@ class NotebookWatchDog():
         if os.path.exists(self.__CELL_STATE_FILE__):
             os.remove(self.__CELL_STATE_FILE__)
             
+    def skip(self, line, cell=None):
+        print(f"skipping cell...")
+        return
+            
 
 def load_ipython_extension(shell):
-    wd = NotebookWatchDog(get_ipython())
+    wd = NotebookWatchDog(shell)
     '''Registers the watchdog magic when the extension loads.'''
     shell.register_magic_function(wd.watch, 'line_cell')
     shell.register_magic_function(wd.unwatch, 'line_cell')
+    shell.register_magic_function(wd.skip, 'line_cell')
 
 def unload_ipython_extension(shell):
     '''Unregisters the watchdog magic when the extension unloads.'''
     del shell.magics_manager.magics['cell']['watch']
     del shell.magics_manager.magics['cell']['unwatch']
+    del shell.magics_manager.magics['cell']['skip']
